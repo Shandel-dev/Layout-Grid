@@ -35,7 +35,11 @@ body{
     background-color: black;
     padding: 0.5em;
 }
+#pageHeader a{
+    color: white;
+}
 
+/*---------------------------------------------------------------------------*/
 
 #mainNav{
     display: flex;
@@ -43,6 +47,7 @@ body{
     align-items: center;
     grid-area: nav;
     background-color: cornflowerblue;
+    box-shadow: 5px 5px 3px 3px #000000;
     padding: 0.5em 1em;
 }
 
@@ -51,6 +56,7 @@ body{
     list-style: none;
     gap: 1em;
 }
+
 
 #mainNav .logo{
     background-color: black;
@@ -64,6 +70,8 @@ body{
     color: black;
 }
 
+/*---------------------------------------------------------------------------*/
+
 #pageMain{
     display: flex;
     flex-direction: column;
@@ -75,10 +83,19 @@ body{
     font-family: var(--fonte-texto);
 }
 
-#pageMain article{
+#pageMain .banner-slide{
+    background-color: crimson;
     color: white;
+    aspect-ratio: 16/9;
+    border-radius: 1em;
+    text-align: center;
     padding: 1em;
-    background-color: chocolate;
+}
+
+#pageMain article{
+    border: 5px solid chocolate;
+    border-radius: 1em;
+    padding: 1em;
     border-radius: 0.5em;
 }
 
@@ -86,23 +103,23 @@ body{
     font-family: var(--fonte-titulo);
 }
 
+/*---------------------------------------------------------------------------*/
+
 #pageAside{
     grid-area: aside;
-    background-color: brown;
-    color: white;
+    background-color: lightslategrey;
     padding: 1em;
 }
 
 #siteAds{
     grid-area: ads;
-    background-color: orange;
+    background-color: darkseagreen;
     padding: 1em;
 }
 
 #pageFooter{
-    background-color: red;
+    background-color: coral;
     grid-area: footer;
-    color: white;
     padding: 0.5em;
 }
 
