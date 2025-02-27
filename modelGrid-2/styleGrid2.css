@@ -1,0 +1,160 @@
+:root{
+    --fonte-titulo: "Bebas neue", sans-serif;
+    --fonte-texto: "roboto", sans-serif;
+    --fonte-div: "raleway", sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "nav"
+    "main"
+    "aside"
+    "footer";
+    grid-template-rows: auto auto 1fr auto auto auto;     /*Define como as 6 linhas se comportam*/
+    grid-template-columns: 1fr;                 /*Define como uma colune se comporta*/
+    height: 100dvh;
+    font-size: 14px;
+    transition: 0.5s;
+    font-family: var(--fonte-div);
+}
+
+#pageHeader{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    grid-area: header;
+    background-color: black;
+    padding: 0.5em;
+}
+#pageHeader a{
+    color: white;
+}
+
+/*---------------------------------------------------------------------------*/
+
+#mainNav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: nav;
+    background-color: cornflowerblue;
+    box-shadow: 5px 5px 3px 3px #000000;
+    padding: 0.5em 1em;
+}
+
+#mainNav ul, div{
+    display: flex;
+    list-style: none;
+    gap: 1em;
+}
+
+
+#mainNav .logo{
+    background-color: black;
+    aspect-ratio: 1/1;
+    width: 2em;
+    border-radius: 50%;
+}
+
+#mainNav a{
+    text-decoration: none;
+    color: black;
+}
+
+/*---------------------------------------------------------------------------*/
+
+#pageMain{
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    grid-area: main;
+    background-color: bisque;
+    padding: 1em;
+    gap: 1em;
+    font-family: var(--fonte-texto);
+}
+
+#pageMain .banner-slide{
+    background-color: crimson;
+    color: white;
+    aspect-ratio: 16/9;
+    border-radius: 1em;
+    text-align: center;
+    padding: 1em;
+}
+
+#pageMain article{
+    border: 5px solid chocolate;
+    border-radius: 1em;
+    padding: 1em;
+    border-radius: 0.5em;
+}
+
+#pageMain article h1{
+    font-family: var(--fonte-titulo);
+}
+
+/*---------------------------------------------------------------------------*/
+
+#pageAside{
+    grid-area: aside;
+    background-color: lightslategrey;
+    padding: 1em;
+}
+
+#pageFooter{
+    background-color: coral;
+    grid-area: footer;
+    padding: 0.5em;
+}
+
+@media (max-width: 575px){}      /*disposivos extra pequenos (XS) - Smartphone tela pequena - padrão no site*/
+
+@media (min-width: 576px){      /*Dispositivos pequenos (SM)) - Smartphone tela grande - */
+    body{
+        font-size: 14px;
+    }
+}
+@media (min-width: 768px){      /*Dispositos médios (MD) - Tablets e Smartphones grandes -*/
+    body{
+        grid-template-areas: 
+        "header header"
+        "nav nav"
+        "main aside"
+        "footer footer";
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        font-size: 16px;
+    }   
+}
+@media (min-width: 992px){      /*Dispositivos grande (LG) - Desktops menores e laptops -*/
+    body{
+        font-size: 18px;
+    }
+
+}
+@media (min-width: 1200px){     /*Dispositivos extra grande (XL) - Desktops grandes -*/
+    body{
+        grid-template-areas: 
+        "header header header"
+        "nav nav nav"
+        "aside main ads"
+        "footer footer footer";
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        font-size: 20px;
+    }
+}
+@media (min-width: 1400px){     /*Dispositivos extra extra grande (XXL) - Monitores grandes e telas 4K - */
+    body{
+        font-size: 22px;
+    }
+}
